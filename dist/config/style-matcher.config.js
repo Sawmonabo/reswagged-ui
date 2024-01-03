@@ -72,6 +72,7 @@ class StyleMatcherConfig extends config_1.Config {
         this._defaultBorderColorSelector = 'h5';
         this._authBtnSourceSelector = 'a[href*="swagger.json"]:eq(0)';
         this._httpVerbSourceSelector = '[data-section-id] .http-verb';
+        this.setOptions(cfg);
         this.swaggerConfig = swaggerConfig;
         this.redocConfig = redocConfig;
     }

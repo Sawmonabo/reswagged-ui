@@ -115,8 +115,8 @@ export interface RedocTryItOutOptions extends RedocOptions {
     operationBoxSelector?: string;
     selectedOperationClass?: string;
     dependenciesVersions?: DependenciesVersions;
-    authBtn?: AuthBtnOptions;
-    tryBtn?: TryBtnOptions;
+    authBtnOptions?: AuthBtnOptions;
+    tryBtnOptions?: TryBtnOptions;
     swaggerOptions?: SwaggerOptions;
-    stylerMatcher?: StyleMatcherOptions;
+    stylerMatcherOptions?: StyleMatcherOptions;
 }

@@ -26,6 +26,7 @@ class SwaggerConfig extends config_1.Config {
             this._onComplete();
             this._resolve();
         };
+        this.setOptions(options);
         this.url = url;
         this.tryItOutEnabled = tryItOutEnabled;
         this.onCompletePromise = new Promise(resolve => this._resolve = resolve);
@@ -76,10 +77,10 @@ class SwaggerConfig extends config_1.Config {
         return `${this.boxSelector}.${this.authModalClass}`;
     }
     get bundleUrl() {
-        return `https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js`;
+        return `${this.cdnUrl}/swagger-ui-dist@${this.version}/swagger-ui-bundle.js`;
     }
     get cssUrl() {
-        return `https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css`;
+        return `${this.cdnUrl}swagger-ui-dist@${this.version}/swagger-ui.css`;
     }
 }
 exports.SwaggerConfig = SwaggerConfig;

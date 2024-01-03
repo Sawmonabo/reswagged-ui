@@ -16,9 +16,17 @@
                 `http://0.0.0.0:8081/openapi.json`,
                 {
                     scrollYOffset: 50,
-                    tryItOutEnabled: false,
+                    tryItOutEnabled: true,
                     swaggerOptions: {
-                        tryItOutEnabled: false,
+                        version: "5",
+                    },
+                    tryBtnOptions: {
+                        text: "TRY IT OUT",
+                    },
+                    authBtnOptions: {
+                        text: "AUTHENTICATE",
+                    },
+                    stylerMatcherOptions: {
                     },
                 },
                 document.getElementById("reswagged-container"),

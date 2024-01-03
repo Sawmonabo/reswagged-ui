@@ -5,4 +5,9 @@ export class AuthBtnConfig extends Config<AuthBtnOptions> implements AuthBtnOpti
     public readonly posSelector: string = 'h1:eq(1)';
     public readonly text: string = 'AUTHORIZE';
     public readonly className: string = '_auth-btn';
+
+    public constructor(cfg:AuthBtnOptions) {
+        super(cfg);
+        this.setOptions(cfg);
+    }
 }

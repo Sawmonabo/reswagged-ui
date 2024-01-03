@@ -26,7 +26,7 @@ class ReSwaggedUI {
     static loadDependencies() {
         return __awaiter(this, void 0, void 0, function* () {
             yield (0, scripts_1.loadScript)(redoc_wrapper_1.RedocWrapper.cfg.tryItDependencies.jqueryUrl);
-            return (0, scripts_1.loadScript)(redoc_wrapper_1.RedocWrapper.cfg.tryItDependencies.jqueryScrollToUrl);
+            return yield (0, scripts_1.loadScript)(redoc_wrapper_1.RedocWrapper.cfg.tryItDependencies.jqueryScrollToUrl);
         });
     }
     static loadAll() {
@@ -39,13 +39,12 @@ class ReSwaggedUI {
         });
     }
     static config(url, cfg, element) {
-        cfg.tryItOutEnabled = false;
         redoc_wrapper_1.RedocWrapper.cfg = new redoc_try_it_out_config_1.RedocTryItOutConfig(url, cfg, element);
         if (redoc_wrapper_1.RedocWrapper.cfg.tryItOutEnabled) {
             swagger_wrapper_1.SwaggerWrapper.cfg = new swagger_config_1.SwaggerConfig(cfg.swaggerOptions || {}, url, true);
-            auth_btn_1.AuthBtn.cfg = new auth_btn_config_1.AuthBtnConfig(cfg.authBtn || {});
-            try_btn_1.TryBtn.cfg = new try_btn_config_1.TryBtnConfig(cfg.tryBtn || {});
-            styler_1.Styler.cfg = new style_matcher_config_1.StyleMatcherConfig(cfg.stylerMatcher || {}, swagger_wrapper_1.SwaggerWrapper.cfg, redoc_wrapper_1.RedocWrapper.cfg);
+            auth_btn_1.AuthBtn.cfg = new auth_btn_config_1.AuthBtnConfig(cfg.authBtnOptions || {});
+            try_btn_1.TryBtn.cfg = new try_btn_config_1.TryBtnConfig(cfg.tryBtnOptions || {});
+            styler_1.Styler.cfg = new style_matcher_config_1.StyleMatcherConfig(cfg.stylerMatcherOptions || {}, swagger_wrapper_1.SwaggerWrapper.cfg, redoc_wrapper_1.RedocWrapper.cfg);
         }
     }
     static init(docUrl, cfg, element, customStylesheet) {

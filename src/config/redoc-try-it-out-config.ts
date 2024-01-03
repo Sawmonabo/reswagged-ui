@@ -21,6 +21,7 @@ export class RedocTryItOutConfig extends Config<RedocTryItOutOptions> implements
 
     public constructor(docUrl: string, cfg:RedocTryItOutOptions, element?: HTMLElement) {
         super(cfg);
+        this.setOptions(cfg);
         this.docUrl = docUrl;
         this.element = element;
     }

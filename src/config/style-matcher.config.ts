@@ -89,6 +89,7 @@ export class StyleMatcherConfig extends Config<StyleMatcherOptions> implements S
 
     public constructor(cfg:StyleMatcherOptions, swaggerConfig: SwaggerConfig, redocConfig: RedocTryItOutConfig) {
         super(cfg);
+        this.setOptions(cfg);
         this.swaggerConfig = swaggerConfig;
         this.redocConfig = redocConfig;
     }

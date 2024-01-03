@@ -16,7 +16,7 @@ export class ReSwaggedUI {
 
     private static async loadDependencies():Promise<void> {
         await loadScript(RedocWrapper.cfg.tryItDependencies.jqueryUrl);
-        return loadScript(RedocWrapper.cfg.tryItDependencies.jqueryScrollToUrl);
+        return await loadScript(RedocWrapper.cfg.tryItDependencies.jqueryScrollToUrl);
     }
 
     private static async loadAll(): Promise<void[]> {
@@ -28,20 +28,18 @@ export class ReSwaggedUI {
     }
 
     private static config(url:string, cfg:RedocTryItOutOptions, element?: HTMLElement): void {
-        cfg.tryItOutEnabled = false;
 
         RedocWrapper.cfg = new RedocTryItOutConfig(url, cfg, element);
 
         if ( RedocWrapper.cfg.tryItOutEnabled ){
             SwaggerWrapper.cfg = new SwaggerConfig(cfg.swaggerOptions || {}, url, true);
-            AuthBtn.cfg = new AuthBtnConfig(cfg.authBtn || {});
-            TryBtn.cfg = new TryBtnConfig(cfg.tryBtn || {});
-            Styler.cfg = new StyleMatcherConfig(cfg.stylerMatcher || {}, SwaggerWrapper.cfg, RedocWrapper.cfg);
+            AuthBtn.cfg = new AuthBtnConfig(cfg.authBtnOptions || {});
+            TryBtn.cfg = new TryBtnConfig(cfg.tryBtnOptions || {});
+            Styler.cfg = new StyleMatcherConfig(cfg.stylerMatcherOptions || {}, SwaggerWrapper.cfg, RedocWrapper.cfg);
         }
     }
 
     public static async init(docUrl: string, cfg: RedocTryItOutOptions, element?: HTMLElement, customStylesheet?: string):Promise<void> {
-
         ReSwaggedUI.config(docUrl, cfg, element);
 
         if ( RedocWrapper.cfg.tryItOutEnabled ) {

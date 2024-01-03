@@ -13,6 +13,7 @@ class RedocTryItOutConfig extends config_1.Config {
         this.redocVersion = '2.0.0-rc.56';
         this.selectedOperationClass = 'try';
         this.dependenciesVersions = { jquery: '3.6.0', jqueryScrollTo: '2.1.2' };
+        this.setOptions(cfg);
         this.docUrl = docUrl;
         this.element = element;
     }

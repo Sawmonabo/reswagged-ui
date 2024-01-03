@@ -5,6 +5,7 @@ export declare class TryBtnConfig extends Config<TryBtnOptions> implements TryBt
     readonly text: string;
     readonly className: string;
     readonly selectedClassName: string;
+    constructor(cfg: TryBtnOptions);
     get selector(): string;
     get selectedSelector(): string;
 }

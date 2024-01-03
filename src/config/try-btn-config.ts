@@ -7,6 +7,11 @@ export class TryBtnConfig extends Config<TryBtnOptions> implements TryBtnOptions
     public readonly className: string = 'tryBtn';
     public readonly selectedClassName: string = 'selected';
 
+    public constructor(cfg:TryBtnOptions) {
+        super(cfg);
+        this.setOptions(cfg);
+    }
+
     public get selector(): string {
         return `.${this.className}`;
     }

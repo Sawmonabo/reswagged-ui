@@ -1,0 +1,288 @@
+// Body
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+  background-color: #ffffff;
+}
+
+div.sc-ellfGf.cFYLqk.redoc-wrap {
+  width: 100%;
+  margin: 0;
+  display: -webkit-inline-box;
+  min-width: 900px;
+}
+
+// Menu Bar Formatting
+.sc-dvUynV.lbhIE.menu-content {
+  top: 0px !important;
+  width: 220px;
+}
+
+.sc-jHcXXw.bqPUda.http-verb {
+  font-weight: 600;
+  border: 1px solid darkgreen;
+}
+
+.sc-jHcXXw.ewkxcg.http-verb {
+  font-weight: 600;
+  border: 1px solid darkblue;
+}
+
+// SwaggerUI Header
+.sc-fujyAs.sc-fcmMJX.kreCXJ.efZRCi {
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+  padding-top: 5px;
+  font-weight: 600;
+}
+
+// SwaggerUI Function Parameter Name - Display Fix
+#swagger-ui .swagger-ui .parameter__name {
+  display: contents;
+}
+
+// SwaggerUI Function Parameter Name - Margin Fix
+#swagger-ui .swagger-ui input[type=text] {
+  margin: 35px 15px;
+}
+
+// SwaggerUI Select Block - Margin Fix
+#swagger-ui {
+  .swagger-ui {
+    .opblock {
+      select {
+        margin-top: 0% !important;
+        margin-right: 60px !important;
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .opblock-body {
+      select {
+        min-width: revert !important;
+        width: 220px !important;
+        margin-right: 10px !important;
+      }
+    }
+  }
+}
+
+// Response Body Code - Contain code in block
+pre.microlight {
+  contain: inline-size;
+}
+
+// Response Body Code - Fix line breaks and add x-scrolling
+#swagger-ui .swagger-ui .opblock .microlight code {
+  white-space: pre !important;
+  word-break: break-all;
+}
+
+// Response Body Code - Fix download button padding
+#swagger-ui .swagger-ui .opblock .responses-inner .download-contents {
+  right: 15px;
+}
+
+// Decrease Spacing Between Parameters and Input Box
+.swagger-ui .parameters-col_description {
+  width: revert;
+  vertical-align: revert;
+  padding-bottom: 10px;
+}
+
+// Decrease Spacing Between Response Code and Details
+td.response-col_status {
+  min-width: 4em !important;
+}
+
+// Fix Small Window Content Flex
+div.sc-iCoGMd.sc-irKDMX.dolNKP.cwoGFd {
+  flex-direction: revert;
+}
+
+// Scaling right side swagger-components
+div.sc-jSFjdj.sc-gKAaRy.dYGhuI.fTsuzH {
+  width: 60%;
+  padding: 0px 20px;
+  margin-top: 10px;
+}
+
+// Scaling right side background
+div.sc-cKRKFl.cLybRg {
+  width: calc((100% - 220px) * 0.6);
+}
+
+// Scaling center content
+div.sc-hKFxyN.gHYYBK {
+  width: 40%;
+  padding: 15px 5px;
+  padding-top: 0px;
+}
+
+// Logo Formatting
+img.sc-csTbgd.bGPgjY {
+  max-height: 200px;
+  max-width: 220px;
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 100%;
+  display: block;
+}
+
+div.sc-iBzEeX.sc-cOifOu.coaOfs.emjsJn {
+  color: black;
+}
+
+// Top Margin Padding
+div.sc-eCApnc.chOOHy {
+  padding: 13px 0px;
+}
+
+// Left Menu Font Size
+span.sc-dkQUaI.jZIJIY {
+  font-size: 0.90em;
+}
+
+// Authentication Button Formatting
+div._auth-btn {
+  border: 1px solid rgb(50, 50, 159);
+  color: rgb(50, 50, 159);
+  font-weight: normal;
+  margin-left: 0.5em;
+  padding: 4px 8px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+
+  // Authentication Button Hover Functionality
+  &:hover {
+    background-color: grey;
+    transition: color 100ms ease-out;
+  }
+}
+
+// Download Button Formatting
+a.sc-GvhzO.gJrtLH:hover {
+  background-color: grey;
+  transition: color 100ms ease-out;
+}
+
+// Try it Out Button Formatting
+.tryBtn {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 12.3867px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 3px 10px;
+  background-color: white;
+  margin-left: 2px;
+  cursor: pointer;
+
+  // Button Styles
+  &.tryBtn {
+    line-height: 20px;
+    font-weight: 700;
+    background-color: white;
+    border: 1px solid rgb(50, 50, 159);
+    color: black;
+    padding: 3px 10px;
+    margin: 0px;
+    margin-right: 0px !important;
+    cursor: pointer;
+
+    // Hover Styles
+    &:hover {
+      background-color: grey;
+      transition: color 100ms ease-out;
+    }
+
+    // Font Styling
+    > h2 {
+      font-size: 0.929em;
+      font-family: Montserrat, sans-serif;
+    }
+  }
+}
+
+// Execute Button Formatting
+button.btn.execute.opblock-control__btn {
+  margin-top: 15px;
+  font-family: Montserrat, sans-serif !important;
+  background-color: #1475e5;
+
+  // Hover Styles
+  &:hover {
+    background-color: grey;
+    transition: color 100ms ease-out;
+  }
+}
+
+
+div.sc-kizEQm.lkySpF {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  width: calc(100% - 220px);
+  contain: layout;
+}
+
+@media screen and (max-width: 75rem) {
+  .lbhIE {
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    background: rgb(250, 250, 250);
+    display: none;
+  }
+
+  div.sc-kizEQm.lkySpF {
+    width: 100%;
+  }
+
+  .cLybRg {
+    width: 60% !important;
+  }
+
+  .cSSWmS {
+    display: flex;
+    position: fixed;
+    border-radius: 20%;
+    margin-right: 10px;
+    margin-top: 8px;
+    padding: 0px 11px 2px;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .kWoUZ {
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    background: rgb(250, 250, 250);
+    display: flex;
+    border-radius: 0px;
+  }
+}
+
+@media print, screen and (max-width: 75rem) {
+  .cLybRg {
+    display: revert !important;
+  }
+  .gHYYBK {
+    padding: 0px 10px !important;
+  }
+
+  .lkySpF {
+    width: 100% !important;
+  }
+}
+

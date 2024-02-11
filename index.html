@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>ReSwagged-UI</title>
+        <link rel="shortcut icon" href="./static/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+    </head>
+    <body>
+        <script type="text/javascript" src="./dist/reswagged-ui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./dist/reswagged-ui.css"></script>
+        <div id="reswagged-container"></div>
+        <script>
+            ReSwaggedUI.init(
+                `http://0.0.0.0:8081/openapi.json`,
+                {
+                    scrollYOffset: 50,
+                    tryItOutEnabled: true,
+                    swaggerOptions: {
+                        version: "5",
+                    },
+                    tryBtnOptions: {
+                        text: "TRY IT OUT",
+                    },
+                    authBtnOptions: {
+                        text: "AUTHENTICATE",
+                    },
+                    stylerMatcherOptions: {
+                    },
+                },
+                document.getElementById("reswagged-container"),
+            );
+        </script>
+    </body>
+</html>

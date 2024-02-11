@@ -1,0 +1,59 @@
+{
+  "name": "reswagged-ui",
+  "version": "1.0.0",
+  "description": "Where the best features of Swagger Docs and Redoc come together to create a seamlessly integrated and aesthetically pleasing documentation UI for your API.",
+  "jsdelivr": "./dist/reswagged-ui.js",
+  "main": "./dist/reswagged-ui.js",
+  "module": "./dist/reswagged-ui.js",
+  "exports": {
+    "./dist/reswagged-ui.js": "./dist/reswagged-ui.js",
+    "./dist/reswagged-ui.css": "./dist/resawgged-ui.css"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "npm run build:style-override && rimraf ./dist/reswagged-ui.js ./dist/reswagged-ui.js.map && npm run build:main",
+    "build:main": "webpack --color --mode production --config webpack/main.js && tsc -p ./tsconfig.build.json",
+    "build:style-override": "webpack --color --mode production --config webpack/style-override.js && tsc -p ./tsconfig.build.json",
+    "start": "webpack --mode development && tsc -p ./tsconfig.build.json",
+    "serve": "http-server -o -c-1 -p 8080",
+    "clean": "rimraf ./dist",
+    "lint": "eslint --config .eslintrc.json --ignore-path .eslintignore ./src/**/*.ts --fix",
+    "test": "npm run clean && npm run build && npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sawmonabo/reswagged-ui.git"
+  },
+  "author": "SawmonAbo",
+  "keywords": [
+    "redoc",
+    "try it",
+    "try out",
+    "try it out",
+    "openapi",
+    "swagger",
+    "swagger ui"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jquery": "^3.5.29",
+    "@types/jquery.scrollto": "^1.4.29",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "css-loader": "^6.8.1",
+    "cssnano": "^6.0.2",
+    "eslint": "^8.0.0",
+    "http-server": "^14.1.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss-loader": "^7.3.4",
+    "postcss-preset-env": "^9.3.0",
+    "rimraf": "^5.0.5",
+    "sass": "^1.69.6",
+    "sass-loader": "^13.3.3",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^4.8.0"
+  }
+}

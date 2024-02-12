@@ -1,5 +1,5 @@
 import { StyleMatcherConfig } from '../config/style-matcher.config';
-export declare class Styler {
+export declare class WrapperStyler {
     static cfg: StyleMatcherConfig;
     private static sheet;
     private static sheetAddedOnDocument;
@@ -13,5 +13,5 @@ export declare class Styler {
     private static hideDisturbingElements;
     static createStyleElements(): void;
     static init(): void;
-    static initSwaggerWrapper(): void;
+    static initSwagger(): void;
 }

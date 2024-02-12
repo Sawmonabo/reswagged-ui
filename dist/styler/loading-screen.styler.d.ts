@@ -1,4 +1,4 @@
-export declare class LoadingStyler {
+export declare class LoadingScreenStyler {
     private static sheet;
     private static sheetAddedOnDocument;
     private static update;

@@ -1,16 +1,16 @@
 import { StyleBuilder } from '../utils/style-builder';
 
-export class LoadingStyler {
+export class LoadingScreenStyler {
 
     private static sheet = document.createElement('style');
     private static sheetAddedOnDocument = false;
 
     private static update(): void {
-        if (!LoadingStyler.sheetAddedOnDocument) {
-            document.head.appendChild(LoadingStyler.sheet);
-            LoadingStyler.sheetAddedOnDocument = true;
+        if (!LoadingScreenStyler.sheetAddedOnDocument) {
+            document.head.appendChild(LoadingScreenStyler.sheet);
+            LoadingScreenStyler.sheetAddedOnDocument = true;
         }
-        LoadingStyler.sheet.innerHTML = StyleBuilder.toString();
+        LoadingScreenStyler.sheet.innerHTML = StyleBuilder.toString();
     }
 
     public static applyLoadingStyles(): void {
@@ -70,7 +70,7 @@ export class LoadingStyler {
                     animation: 'bounce 500ms alternate infinite ease'
                 });
 
-        LoadingStyler.update();
+        LoadingScreenStyler.update();
     }
 
     public static applyKeyframes(): void {
@@ -97,7 +97,7 @@ export class LoadingStyler {
     }
 
     public static init(): void {
-        LoadingStyler.applyLoadingStyles();
-        LoadingStyler.applyKeyframes();
+        LoadingScreenStyler.applyLoadingStyles();
+        LoadingScreenStyler.applyKeyframes();
     }
 }

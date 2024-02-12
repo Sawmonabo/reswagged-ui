@@ -1,7 +1,7 @@
 import { loadScript } from './utils/loaders/scripts';
 import { loadStylesheet } from './utils/loaders/styles';
-import { Styler } from './styler/wrapper.styler'
-import { LoadingStyler } from '../../style/loading.styler';
+import { WrapperStyler } from './styler/wrapper.styler'
+import { LoadingScreenStyler } from './styler/loading-screen.styler';
 import { RedocTryItOutOptions } from './interfaces/redoc-try-it-out-options.interface';
 import { SwaggerWrapper } from './wrappers/swagger.wrapper';
 import { RedocWrapper } from './wrappers/redoc.wrapper';
@@ -15,7 +15,7 @@ import { StyleMatcherConfig } from './config/style-matcher.config';
 
 
 function startLoadingIndicator() {
-    LoadingStyler.init();
+    LoadingScreenStyler.init();
     const reswaggedContainer = document.getElementById('reswagged-container');
     if (reswaggedContainer) {
         reswaggedContainer.classList.add('hidden');
@@ -72,7 +72,7 @@ export class ReSwaggedUI {
             SwaggerWrapper.cfg = new SwaggerConfig(cfg.swaggerOptions || {}, url, true);
             AuthBtn.cfg = new AuthBtnConfig(cfg.authBtnOptions || {});
             TryBtn.cfg = new TryBtnConfig(cfg.tryBtnOptions || {});
-            Styler.cfg = new StyleMatcherConfig(cfg.stylerMatcherOptions || {}, SwaggerWrapper.cfg, RedocWrapper.cfg);
+            WrapperStyler.cfg = new StyleMatcherConfig(cfg.stylerMatcherOptions || {}, SwaggerWrapper.cfg, RedocWrapper.cfg);
         }
     }
 
@@ -85,7 +85,7 @@ export class ReSwaggedUI {
                 await ReSwaggedUI.loadAll();
                 AuthBtn.init();
                 TryBtn.init();
-                Styler.init();
+                WrapperStyler.init();
             } else {
                 await RedocWrapper.init()
             }

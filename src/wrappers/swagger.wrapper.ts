@@ -1,6 +1,6 @@
 import { loadStylesheet } from '../utils/loaders/styles';
 import { loadScript } from '../utils/loaders/scripts';
-import { Styler } from '../styler/wrapper.styler';
+import { WrapperStyler } from '../styler/wrapper.styler';
 import { SwaggerConfig } from '../config/swagger-config';
 import {CallbackFunction} from "../interfaces/swagger-options.interface";
 
@@ -36,7 +36,7 @@ export class SwaggerWrapper {
     }
 
     public static async init(): Promise<void> {
-        Styler.initSwaggerWrapper();
+        WrapperStyler.initSwagger();
         await loadStylesheet(SwaggerWrapper.cfg.cssUrl);
         await loadScript(SwaggerWrapper.cfg.bundleUrl);
         $('body').append(`<div id="${SwaggerWrapper.cfg.id}" class="${SwaggerWrapper.cfg.hideClass}"></div>`);

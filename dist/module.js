@@ -13,7 +13,7 @@ exports.ReSwaggedUI = void 0;
 const scripts_1 = require("./utils/loaders/scripts");
 const styles_1 = require("./utils/loaders/styles");
 const wrapper_styler_1 = require("./styler/wrapper.styler");
-const loading_styler_1 = require("../../style/loading.styler");
+const loading_screen_styler_1 = require("./styler/loading-screen.styler");
 const swagger_wrapper_1 = require("./wrappers/swagger.wrapper");
 const redoc_wrapper_1 = require("./wrappers/redoc.wrapper");
 const auth_btn_1 = require("./elements/auth.btn");
@@ -24,7 +24,7 @@ const auth_btn_config_1 = require("./config/auth-btn-config");
 const try_btn_config_1 = require("./config/try-btn-config");
 const style_matcher_config_1 = require("./config/style-matcher.config");
 function startLoadingIndicator() {
-    loading_styler_1.LoadingStyler.init();
+    loading_screen_styler_1.LoadingScreenStyler.init();
     const reswaggedContainer = document.getElementById('reswagged-container');
     if (reswaggedContainer) {
         reswaggedContainer.classList.add('hidden');
@@ -73,7 +73,7 @@ class ReSwaggedUI {
             swagger_wrapper_1.SwaggerWrapper.cfg = new swagger_config_1.SwaggerConfig(cfg.swaggerOptions || {}, url, true);
             auth_btn_1.AuthBtn.cfg = new auth_btn_config_1.AuthBtnConfig(cfg.authBtnOptions || {});
             try_btn_1.TryBtn.cfg = new try_btn_config_1.TryBtnConfig(cfg.tryBtnOptions || {});
-            wrapper_styler_1.Styler.cfg = new style_matcher_config_1.StyleMatcherConfig(cfg.stylerMatcherOptions || {}, swagger_wrapper_1.SwaggerWrapper.cfg, redoc_wrapper_1.RedocWrapper.cfg);
+            wrapper_styler_1.WrapperStyler.cfg = new style_matcher_config_1.StyleMatcherConfig(cfg.stylerMatcherOptions || {}, swagger_wrapper_1.SwaggerWrapper.cfg, redoc_wrapper_1.RedocWrapper.cfg);
         }
     }
     static init(docUrl, cfg, element, customStylesheet) {
@@ -85,7 +85,7 @@ class ReSwaggedUI {
                     yield ReSwaggedUI.loadAll();
                     auth_btn_1.AuthBtn.init();
                     try_btn_1.TryBtn.init();
-                    wrapper_styler_1.Styler.init();
+                    wrapper_styler_1.WrapperStyler.init();
                 }
                 else {
                     yield redoc_wrapper_1.RedocWrapper.init();

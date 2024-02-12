@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoadingStyler = void 0;
-const style_builder_1 = require("../reswagged-ui/src/utils/style-builder");
-class LoadingStyler {
+exports.LoadingScreenStyler = void 0;
+const style_builder_1 = require("../utils/style-builder");
+class LoadingScreenStyler {
     static update() {
-        if (!LoadingStyler.sheetAddedOnDocument) {
-            document.head.appendChild(LoadingStyler.sheet);
-            LoadingStyler.sheetAddedOnDocument = true;
+        if (!LoadingScreenStyler.sheetAddedOnDocument) {
+            document.head.appendChild(LoadingScreenStyler.sheet);
+            LoadingScreenStyler.sheetAddedOnDocument = true;
         }
-        LoadingStyler.sheet.innerHTML = style_builder_1.StyleBuilder.toString();
+        LoadingScreenStyler.sheet.innerHTML = style_builder_1.StyleBuilder.toString();
     }
     static applyLoadingStyles() {
         style_builder_1.StyleBuilder
@@ -66,7 +66,7 @@ class LoadingStyler {
             'transform-origin': '50%',
             animation: 'bounce 500ms alternate infinite ease'
         });
-        LoadingStyler.update();
+        LoadingScreenStyler.update();
     }
     static applyKeyframes() {
         const keyframes = document.createElement('style');
@@ -91,10 +91,10 @@ class LoadingStyler {
         document.head.appendChild(keyframes);
     }
     static init() {
-        LoadingStyler.applyLoadingStyles();
-        LoadingStyler.applyKeyframes();
+        LoadingScreenStyler.applyLoadingStyles();
+        LoadingScreenStyler.applyKeyframes();
     }
 }
-exports.LoadingStyler = LoadingStyler;
-LoadingStyler.sheet = document.createElement('style');
-LoadingStyler.sheetAddedOnDocument = false;
+exports.LoadingScreenStyler = LoadingScreenStyler;
+LoadingScreenStyler.sheet = document.createElement('style');
+LoadingScreenStyler.sheetAddedOnDocument = false;

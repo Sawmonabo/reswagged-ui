@@ -34,7 +34,7 @@ class SwaggerWrapper {
     }
     static init() {
         return __awaiter(this, void 0, void 0, function* () {
-            wrapper_styler_1.Styler.initSwaggerWrapper();
+            wrapper_styler_1.WrapperStyler.initSwagger();
             yield (0, styles_1.loadStylesheet)(SwaggerWrapper.cfg.cssUrl);
             yield (0, scripts_1.loadScript)(SwaggerWrapper.cfg.bundleUrl);
             $('body').append(`<div id="${SwaggerWrapper.cfg.id}" class="${SwaggerWrapper.cfg.hideClass}"></div>`);

@@ -1,6 +1,6 @@
 import { loadStylesheet } from '../utils/loaders/styles';
 import { loadScript } from '../utils/loaders/scripts';
-import { Styler } from '../style/styler';
+import { Styler } from '../styler/wrapper.styler';
 import { SwaggerConfig } from '../config/swagger-config';
 import {CallbackFunction} from "../interfaces/swagger-options.interface";
 

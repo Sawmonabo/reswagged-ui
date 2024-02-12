@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SwaggerWrapper = void 0;
 const styles_1 = require("../utils/loaders/styles");
 const scripts_1 = require("../utils/loaders/scripts");
-const styler_1 = require("../style/styler");
+const wrapper_styler_1 = require("../styler/wrapper.styler");
 class SwaggerWrapper {
     static get $box() {
         return $(`${SwaggerWrapper.cfg.boxSelector}`);
@@ -34,7 +34,7 @@ class SwaggerWrapper {
     }
     static init() {
         return __awaiter(this, void 0, void 0, function* () {
-            styler_1.Styler.initSwaggerWrapper();
+            wrapper_styler_1.Styler.initSwaggerWrapper();
             yield (0, styles_1.loadStylesheet)(SwaggerWrapper.cfg.cssUrl);
             yield (0, scripts_1.loadScript)(SwaggerWrapper.cfg.bundleUrl);
             $('body').append(`<div id="${SwaggerWrapper.cfg.id}" class="${SwaggerWrapper.cfg.hideClass}"></div>`);

@@ -1,6 +1,7 @@
 import { loadScript } from './utils/loaders/scripts';
 import { loadStylesheet } from './utils/loaders/styles';
-import { Styler } from './style/styler'
+import { Styler } from './styler/wrapper.styler'
+import { LoadingStyler } from '../../style/loading.styler';
 import { RedocTryItOutOptions } from './interfaces/redoc-try-it-out-options.interface';
 import { SwaggerWrapper } from './wrappers/swagger.wrapper';
 import { RedocWrapper } from './wrappers/redoc.wrapper';
@@ -11,6 +12,42 @@ import { RedocTryItOutConfig } from './config/redoc-try-it-out-config';
 import { AuthBtnConfig } from './config/auth-btn-config'
 import { TryBtnConfig } from './config/try-btn-config';
 import { StyleMatcherConfig } from './config/style-matcher.config';
+
+
+function startLoadingIndicator() {
+    LoadingStyler.init();
+    const reswaggedContainer = document.getElementById('reswagged-container');
+    if (reswaggedContainer) {
+        reswaggedContainer.classList.add('hidden');
+
+        const overlay = document.createElement('div');
+        overlay.classList.add('loading-overlay', 'shown');
+
+        const bounceBall = document.createElement('div');
+        bounceBall.classList.add('bounceball');
+
+        const loadingText = document.createElement('div');
+        loadingText.classList.add('loading-text');
+        loadingText.textContent = 'Loading';
+
+        overlay.appendChild(loadingText);
+        overlay.appendChild(bounceBall);
+        document.body.appendChild(overlay);
+    }
+}
+
+function stopLoadingIndicator() {
+    const overlay = document.querySelector('.loading-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
+
+    const reswaggedContainer = document.getElementById('reswagged-container');
+    if (reswaggedContainer) {
+        reswaggedContainer.classList.remove('hidden');
+        reswaggedContainer.classList.add('shown');
+    }
+}
 
 export class ReSwaggedUI {
 
@@ -40,19 +77,26 @@ export class ReSwaggedUI {
     }
 
     public static async init(docUrl: string, cfg: RedocTryItOutOptions, element?: HTMLElement, customStylesheet?: string):Promise<void> {
-        ReSwaggedUI.config(docUrl, cfg, element);
+        try {
+            startLoadingIndicator();
+            ReSwaggedUI.config(docUrl, cfg, element);
 
-        if ( RedocWrapper.cfg.tryItOutEnabled ) {
-            await ReSwaggedUI.loadAll();
-            AuthBtn.init();
-            TryBtn.init();
-            Styler.init();
-        } else {
-            await RedocWrapper.init()
-        }
+            if ( RedocWrapper.cfg.tryItOutEnabled ) {
+                await ReSwaggedUI.loadAll();
+                AuthBtn.init();
+                TryBtn.init();
+                Styler.init();
+            } else {
+                await RedocWrapper.init()
+            }
 
-        if (customStylesheet) {
-            await loadStylesheet(customStylesheet);
+            if (customStylesheet) {
+                await loadStylesheet(customStylesheet);
+            }
+        } catch (e) {
+            console.error(e);
+        } finally {
+            stopLoadingIndicator();
         }
     }
 }

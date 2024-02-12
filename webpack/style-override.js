@@ -9,7 +9,7 @@ module.exports = {
   mode: "production",
 
   entry: {
-    "reswagged-ui": "./src/style/override.scss",
+    "reswagged-ui": "./src/styler/override.scss",
   },
 
   module: {

@@ -2,6 +2,8 @@
 /// <reference types="jquery" />
 /// <reference types="jquery.scrollto" />
 interface IStyle {
+    'align-items'?: 'center';
+    'animation'?: string;
     'background'?: string;
     'background-color'?: string;
     'background-image'?: string;
@@ -25,6 +27,7 @@ interface IStyle {
     'font-weight'?: number;
     'font-size'?: string;
     'height'?: number | string;
+    'justify-content'?: 'center';
     'left'?: number | string;
     'line-height'?: string;
     'margin'?: number | string;
@@ -37,10 +40,12 @@ interface IStyle {
     'padding-right'?: number | string;
     'padding-top'?: number | string;
     'pointer-events'?: 'initial' | 'none';
-    'position'?: 'absolute' | 'relative';
+    'position'?: 'absolute' | 'relative' | 'fixed';
     'right'?: number | string;
     'text-transform'?: string;
     'top'?: number | string;
+    'transform-origin'?: string;
+    'vertical-align'?: 'bottom' | 'top' | 'middle';
     'visibility'?: 'hidden' | 'visible';
     'width'?: number | string;
     'z-index'?: number;
